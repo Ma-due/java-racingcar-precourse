@@ -22,7 +22,7 @@
 	* 우승자는 여러명일 수 있다.
 
 * 예외 상황시 에러 문구는 아래와 같이 출력한다.
-	* "[ERROR] <ERROR MESSAGE>"
+	* "[ERROR] ERROR MESSAGE"
 
 ## 기능 구현 리스트
 ---
