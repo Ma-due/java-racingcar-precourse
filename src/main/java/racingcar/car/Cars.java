@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Cars {
+    private static final int RANDOM_MINIMUM_RANGE = 0;
+    private static final int RANDOM_MAXIMUM_RANGE = 9;
+    private static final int CAR_GO_CONDITION = 4;
+    private static final String HYPHEN = "-";
+
     private final List<Car> cars;
 
     public Cars(List<String> carNameList) {
@@ -24,9 +29,7 @@ public class Cars {
     }
 
     private String[] getData(String name, int position) {
-        String hyphen = intToHyphen(position);
-
-        return new String[]{name, hyphen};
+        return new String[]{name, intToHyphen(position)};
     }
 
     public List<String> getWinnerList() {
@@ -37,13 +40,13 @@ public class Cars {
     }
 
     private boolean canGo() {
-        return RandomUtils.nextInt(0, 9) >= 4;
+        return RandomUtils.nextInt(RANDOM_MINIMUM_RANGE, RANDOM_MAXIMUM_RANGE) >= CAR_GO_CONDITION;
     }
 
     private String intToHyphen(int count) {
         StringBuilder hyphen = new StringBuilder();
         for (int i = 0; i < count; i++) {
-            hyphen.append("-");
+            hyphen.append(HYPHEN);
         }
 
         return hyphen.toString();
