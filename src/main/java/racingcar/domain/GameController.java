@@ -15,7 +15,7 @@ public class GameController {
     }
 
     public void play() {
-        Cars cars = new Cars(inputView.inputCarNameLine());
+        Cars cars = new Cars(inputView.inputCarName());
 
         int gameStepCount = Integer.parseInt(inputView.inputGameStepCount());
 

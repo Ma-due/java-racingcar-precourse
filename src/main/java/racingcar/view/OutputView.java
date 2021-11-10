@@ -1,7 +1,6 @@
 package racingcar.view;
 
 import java.util.List;
-import java.util.SplittableRandom;
 
 public class OutputView {
     private static final String PRINT_GAME_MESSAGE = "실행 결과";

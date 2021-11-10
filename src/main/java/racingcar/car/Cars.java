@@ -14,6 +14,7 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(List<String> carNameList) {
+        System.out.println(carNameList);
         this.cars = carNameList.stream()
                 .map(Car::new)
                 .collect(Collectors.toList());
@@ -23,6 +24,7 @@ public class Cars {
 
     public List<String[]> nextGameStep() {
         cars.stream().filter(car -> canGo()).forEach(Car::go);
+
         return cars.stream()
                 .map(car -> getData(car.getName(), car.getPosition()))
                 .collect(Collectors.toList());
