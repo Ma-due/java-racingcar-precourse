@@ -28,13 +28,15 @@ public class InputView {
         return carNameList;
     }
 
-    public int inputGameStepCount() {
+    public String inputGameStepCount() {
+        System.out.println("시도 횟수를 입력해 주세요 : ");
         String gameStepCount = scanner.nextLine();
+        System.out.println();
 
-        if (validationGameStepCount(gameStepCount)) {
-            inputGameStepCount();
+        if (!validationGameStepCount(gameStepCount)) {
+            gameStepCount = inputGameStepCount();
         }
 
-        return Integer.parseInt(gameStepCount);
+        return gameStepCount;
     }
 }
