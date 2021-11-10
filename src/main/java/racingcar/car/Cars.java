@@ -14,7 +14,6 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(List<String> carNameList) {
-        System.out.println(carNameList);
         this.cars = carNameList.stream()
                 .map(Car::new)
                 .collect(Collectors.toList());
