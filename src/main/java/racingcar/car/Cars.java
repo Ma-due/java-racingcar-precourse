@@ -21,7 +21,7 @@ public class Cars {
         System.out.println(carNameList.toString());
     }
 
-    public List<String[]> func() {
+    public List<String[]> nextGameStep() {
         cars.stream().filter(car -> canGo()).forEach(Car::go);
         return cars.stream()
                 .map(car -> getData(car.getName(), car.getPosition()))

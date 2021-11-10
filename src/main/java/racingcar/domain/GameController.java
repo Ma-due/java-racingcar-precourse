@@ -21,8 +21,8 @@ public class GameController {
 
         OutputView.printGameMessage();
         while (gameStepCount > 0) {
-            List<String[]> func = cars.func();
-            OutputView.printGameStep(func);
+            List<String[]> carData = cars.nextGameStep();
+            OutputView.printGameStep(carData);
             gameStepCount--;
         }
 
