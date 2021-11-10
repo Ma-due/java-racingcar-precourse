@@ -20,7 +20,7 @@ public class GameController {
         int gameStepCount = Integer.parseInt(inputView.inputGameStepCount());
 
         OutputView.printGameMessage();
-        while(gameStepCount > 0) {
+        while (gameStepCount > 0) {
             List<String[]> func = cars.func();
             OutputView.printGameStep(func);
             gameStepCount--;

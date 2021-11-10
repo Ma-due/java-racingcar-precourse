@@ -20,7 +20,7 @@ public class InputView {
 
         while (stringTokenizer.hasMoreTokens()) {
             String carName = stringTokenizer.nextToken();
-            if(validationInputName(carName)) {
+            if (validationInputName(carName)) {
                 carNameList.add(carName);
             }
         }
