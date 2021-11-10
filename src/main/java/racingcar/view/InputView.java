@@ -1,6 +1,9 @@
 package racingcar.view;
 
+import racingcar.valid.Validator;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static racingcar.valid.Validator.*;
 
@@ -15,7 +18,7 @@ public class InputView {
         this.scanner = scanner;
     }
 
-    public List<String> inputCarNameLine() {
+    public List<String> inputCarName() {
         List<String> carNameList = new ArrayList<>();
 
         System.out.println(INPUT_CARS_NAME_MESSAGE);
@@ -23,13 +26,14 @@ public class InputView {
         StringTokenizer stringTokenizer = new StringTokenizer(carNameString, TOKENIZER_DELIM);
 
         while (stringTokenizer.hasMoreTokens()) {
-            String carName = stringTokenizer.nextToken();
-            if (validationInputName(carName)) {
-                carNameList.add(carName);
-            }
+            carNameList.add(stringTokenizer.nextToken());
         }
 
-        return carNameList;
+        return carNameList.
+                stream()
+                .filter(Validator::validationInputName)
+                .map(String::trim)
+                .collect(Collectors.toList());
     }
 
     public String inputGameStepCount() {
