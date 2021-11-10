@@ -11,7 +11,7 @@ public class Validator {
             Integer.parseInt(gameStepCount);
             return true;
         } catch (NumberFormatException e) {
-            System.out.println("숫자를 입력해주세용");
+            System.out.println("[ERROR] 시도 횟수는 숫자여야 한다.");
             return false;
         }
     }
