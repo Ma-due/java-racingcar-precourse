@@ -14,20 +14,14 @@ public class OutputView {
         System.out.println(PRINT_GAME_MESSAGE);
     }
 
-    public static void printGameStep(List<String[]> GameResult) {
-        for (String[] strings : GameResult) {
-            System.out.println(strings[NAME_INDEX] + " : " + strings[HYPHEN_INDEX]);
+    public static void printGameStep(List<String[]> carData) {
+        for (String[] carInformation : carData) {
+            System.out.println(carInformation[NAME_INDEX] + " : " + carInformation[HYPHEN_INDEX]);
         }
         System.out.println();
     }
 
     public static void printGameWinner(List<String> winner) {
-        System.out.print(WINNER_MESSAGE);
-        for (int i = 0; i < winner.size(); i++) {
-            System.out.print(winner.get(i));
-            if (i != winner.size() - 1) {
-                System.out.print(MULTI_WINNER_TEXT);
-            }
-        }
+        System.out.print(WINNER_MESSAGE + String.join(MULTI_WINNER_TEXT, winner));
     }
 }
